@@ -1,0 +1,44 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = '...'
+theme = "risotto"
+
+paginate = 3
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+# prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
+# See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
+ignoreErrors = ["error-remote-getjson"]
+
+# Automatically add content sections to main menu
+sectionPagesMenu = "main"
+
+pygmentsUseClasses = true
+
+[params]
+noindex = false
+
+[params.theme]
+palette = "tokyo-night-light_custom"
+
+# Sidebar: about/bio
+[params.about]
+title = "Arkaev I"
+description = "My personal blog about what I do."
+# logo = "images/rice.svg"
+
+
+[[params.socialLinks]]
+icon = "fa-brands fa-github"
+title = "GitHub"
+url = "https://github.com/ha308ing"
+
+[[params.socialLinks]]
+icon = "fa-solid fa-envelope"
+title = "Email"
+url = "mailto:lray5610@gmail.com"
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
