@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://flourishing-semifreddo-630593.netlify.app/'
 languageCode = 'en-us'
 title = '...'
 theme = "risotto"
