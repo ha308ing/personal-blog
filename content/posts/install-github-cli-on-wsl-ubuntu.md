@@ -5,6 +5,7 @@ draft = false
 +++
 
 Just use commands from documentation.
+
 ```bash
 type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
@@ -21,4 +22,4 @@ https://github.com/settings/tokens/new
 
 `gh auth login --with-token < mytoken.txt`
 
-GitHub cli has wonderful `--help`  parameter for each command and any use case.
+GitHub cli has wonderful `--help` parameter for each command and any use case.
