@@ -2,6 +2,8 @@
 title = 'Create ssh key for git'
 date = 2023-10-20T23:13:57+04:00
 draft = false
+showTableOfContents = true
+tags = ["git", "ssh"]
 +++
 
 You can configure ssh keys for multiple accounts on sites like Gitlab, GitHub
@@ -30,8 +32,9 @@ chmod 600 ~/.ssh/config
 In this file you can create custom host names so that allows you to use specific host for each user.
 
 ```
-Host <custom hostname, like <USER>.github.com>
+Host <custom hostname, like <USER>.gh>
         HostName github.com
+        User <USER>
         IdentityFile <PATH TO SSH KEY>
 ```
 

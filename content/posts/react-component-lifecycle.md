@@ -3,6 +3,7 @@ title = 'React Component Lifecycle'
 date = 2023-12-24T21:58:01+04:00
 draft = false
 tags = ["react"]
+showTableOfContents = true
 +++
 
 1. Mounting

@@ -2,6 +2,7 @@
 title = 'Set up WSL'
 date = 2023-10-20T22:23:23+04:00
 draft = false
+showTableOfContents = true
 +++
 
 ## Set default WSL version

@@ -2,6 +2,7 @@
 title = 'Install GitHub cli on WSL Ubuntu'
 date = 2023-10-20T23:10:27+04:00
 draft = false
+tags = ["git"]
 +++
 
 Just use commands from documentation.

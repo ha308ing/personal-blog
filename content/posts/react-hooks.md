@@ -3,6 +3,7 @@ title = 'React Hooks'
 date = 2023-12-24T22:29:46+04:00
 draft = false
 tags = ["react"]
+showTableOfContents = true
 +++
 
 There are 3 rules for hooks:

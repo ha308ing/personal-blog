@@ -3,6 +3,7 @@ title = 'Git Sign'
 date = 2024-04-01T02:02:33+04:00
 draft = false
 tags = ["git", "gpg"]
+showTableOfContents = true
 +++
 
 ## Get gpg Program on Windows
@@ -11,7 +12,7 @@ tags = ["git", "gpg"]
 - also comes with `git-bash`: `/bin/gpg`
 
 To change pin entry dialog language set user environment variable *LANG* to *en*:
-- <kbd>Wind</kbd>+<kbd>R</kbd>, `rundll32.exe sysdm.cpl,EditEnvironmentVariables`
+- <kbd>Win</kbd>+<kbd>R</kbd>, `rundll32.exe sysdm.cpl,EditEnvironmentVariables`
 - *Control Panel* / *User Accounts* / *Change my environment variables*
 
 ## Generate GPG Key

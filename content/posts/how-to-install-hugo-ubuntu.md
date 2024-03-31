@@ -2,6 +2,7 @@
 title = 'How to Install Hugo on Ubuntu'
 date = 2023-10-20T13:07:12+04:00
 draft = false
+showTableOfContents = true
 +++
 
 To keep track of my actions for future uses and as dementia prevention measures, I've decided to use blog.
