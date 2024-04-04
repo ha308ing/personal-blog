@@ -41,11 +41,14 @@ Now configure *git* with info about:
 - with what program (optional if default program is not the same that generated key)
 
 Something like this:
+
 ```
 git config --local user.email <email>
 git config --local user.signingkey <key id>
 git config --global gpg.program <path to gpg executable>
 ```
+
+or use [conditional git config]({{<ref "/posts/conditional-git-config" >}} "conditional config")
 
 To verify git config:
 - `git config -l --local`
