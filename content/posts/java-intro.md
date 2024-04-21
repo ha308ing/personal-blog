@@ -191,46 +191,24 @@ for classes:
 
 ## Operations
 
-Arithmetic:
+Operators | Precedence
+--- | ---
+postfix | `expr++` `expr--`
+unary | `++expr` `--expr` `+expr` `-expr` `~` `!`
+multiplicative | `*` `/` `%`
+additive | `+` `-`
+shift | `<<` `>>` `>>>`
+relational | `<` `>` `<=` `>=` `instanceof`
+equality | `==` `!=`
+bitwise AND | `&`
+bitwise exclusive OR | `^`
+bitwise inclusive OR | `\|`
+logical AND | `&&`
+logical OR | `\|\|`
+ternary | `? :`
+assignment | `=` `+=` `-=` `*=` `/=` `%/` `&=` `^=` `|=` `<<=` `>>=` `>>>=`
 
-- `x + y`
-- `x - y`
-- `x * y`
-- `x / y`
-- `x % y`
-- `++x`
-- `--y`
-
-Assignment:
-
-- `x = 5`
-- `x += 5`
-- `x -= 5`
-- `x *= 5`
-- `x /= 5`
-- `x %= 5`
-- `x &= 5`
-- `x |= 5`
-- `x ^= 5`
-- `x >>= 5`
-- `x <<= 5`
-
-Comparison:
-
-- `x == y`
-- `x != y`
-- `x > y`
-- `x < y`
-- `x >= y`
-- `x <= y`
-
-Logical:
-
-- `x && y`
-- `x || y`
-- `!x`
-
-Bitwise
+<small>[source](https://dev.java/learn/language-basics/using-operators/#operators)</small>
 
 ## Exceptions
 
@@ -297,5 +275,6 @@ static int add(int a, int b) {
 ## Sources
 
 - [w3schools](https://www.w3schools.com/java)
+- [dev.java](https://dev.java/learn)
 
     
