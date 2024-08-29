@@ -1,0 +1,126 @@
+{{ define "main" }}
+  <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+    Portfolio
+  </h1>
+  <div class="flex flex-col gap-8">
+    {{ range .RegularPages }}
+      <section>
+        <h2 class="text-center  font-semibold mb-4">
+          {{ .Title }}
+        </h2>
+        <div class="flex flex-col md:flex-row [&>*]:basis-full md:items-center">
+          <div class="splideContainer drop-shadow-lg">
+            <div class="splide" role="group" aria-label="{{ .Title }} splice">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  {{ range .Params.images }}
+                    <li class="splide__slide"><img src="{{ . }}" alt="" /></li>
+                  {{ end }}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="md:p-2 self-start">
+            <div class="flex flex-row justify-end gap-3">
+              {{ with .Params.repo }}
+                <a
+                  target="_blank"
+                  href="{{ . }}"
+                  class="flex flex-row font-semibold block text-base/8 items-center gap-1"
+                >
+                  {{ $isGithub := strings.Contains . "github" }}
+                  {{ $isGitlab := strings.Contains . "gitlab" }}
+
+                  {{ if $isGithub }}
+                    {{ partial "icon.html" "github" }}
+                  {{ end }}
+
+                  {{ if $isGitlab }}
+                    {{ partial "icon.html" "gitlab" }}
+                  {{ end }}
+
+                  repo
+                </a>
+              {{ end }}
+
+              {{ with .Params.figma }}
+                <a
+                  target="_blank"
+                  href="{{ . }}"
+                  class="flex flex-row font-semibold block text-base/8 items-center gap-1"
+                >
+                  {{ partial "icon.html" "figma" }}
+                  figma
+                </a>
+              {{ end }}
+
+              {{ with .Params.deploy }}
+                <a
+                  href="{{ . }}"
+                  target="_blank"
+                  class="flex flex-row font-semibold block text-base/8 items-center gap-1"
+                >
+                  {{ partial "icon.html" "globe" }}
+                  deploy
+                </a>
+              {{ end }}
+
+              {{ with .Params.site }}
+                <a
+                  href="{{ . }}"
+                  target="_blank"
+                  class="flex flex-row font-semibold block text-base/8 items-center gap-1"
+                >
+                  {{ partial "icon.html" "globe" }}
+                </a>
+              {{ end }}
+
+            </div>
+            <div class="p-4">
+              {{ with .Summary }}
+                <div class="mb-4">
+                  {{ . }}
+                </div>
+              {{ end }}
+              {{ with .Params.points }}
+                <ul class="list-disc text-sm md:px-8">
+                  {{ range . }}
+                    <li>{{ . |  markdownify | emojify }}</li>
+                  {{ end }}
+                </ul>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </section>
+    {{ end }}
+  </div>
+
+  {{ .Content }}
+
+
+  <script src=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js "></script>
+  <link
+    href=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css "
+    rel="stylesheet"
+  />
+
+  {{ with resources.Get "js/portfolio.js" }}
+    {{ if hugo.IsDevelopment }}
+      {{ with . | js.Build }}
+        <script src="{{ .RelPermalink }}"></script>
+      {{ end }}
+    {{ else }}
+      {{ $js := resources.Get "js/main.js" | js.Build }}
+      {{ $optsProd := dict "minify" true }}
+      {{ with . | js.Build $optsProd | fingerprint }}
+        <script
+          src="{{ .RelPermalink }}"
+          integrity="{{ .Data.Integrity }}"
+          crossorigin="anonymous"
+        ></script>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+{{ end }}

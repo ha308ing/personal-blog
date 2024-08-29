@@ -16,6 +16,11 @@
   weight = 10
 
 [[main]]
+  name = "Portfolio"
+  pageRef = "portfolio"
+  weight = 10
+
+[[main]]
   identifier = "email"
   url = "mailto:kadined37-hp@yahoo.com"
   pre = "email"
