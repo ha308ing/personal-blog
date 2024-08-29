@@ -6,12 +6,15 @@
   "scripts": {
     "build": "hugo --cleanDestinationDir",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prettier": "prettier --check ./"
+    "prettier": "prettier --check ./",
+    "tailwind-dev": "cross-env NODE_ENV=development ./themes/blowfish/node_modules/tailwindcss/lib/cli.js -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
+    "tailwind-build": "cross-env NODE_ENV=production ./themes/blowfish/node_modules/tailwindcss/lib/cli.js -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "prettier": "^3.2.5",
     "prettier-plugin-go-template": "^0.0.15"
   }
