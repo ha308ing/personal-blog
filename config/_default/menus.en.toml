@@ -32,6 +32,12 @@
   pre = "github"
   weight = 20
 
+[[main]]
+  identifier = "linkedin"
+  url = "https://linkedin.com/in/ivan-arkaev"
+  pre = "linkedin"
+  weight = 20
+
 #[[main]]
 #  name = "Parent"
 #  weight = 20
@@ -84,6 +90,12 @@
   identifier = "github"
   url = "https://github.com/ha308ing"
   pre = "github"
+  weight = 20
+
+[[footer]]
+  identifier = "linkedin"
+  url = "https://linkedin.com/in/ivan-arkaev"
+  pre = "linkedin"
   weight = 20
 
 # [[footer]]
