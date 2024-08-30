@@ -1,10 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("hello portfolio");
   var splides = document.getElementsByClassName("splide");
-  const splideContainers = document.getElementsByClassName("splideContainer");
-  const rects = Array.from(splideContainers).map((e) =>
-    e.getBoundingClientRect(),
-  );
+  const rects = new Array(splides.length);
 
   for (var i = 0; i < splides.length; i++) {
     new Splide(splides[i], {
@@ -20,16 +16,31 @@ document.addEventListener("DOMContentLoaded", () => {
       pagination: false,
       rewind: true,
     }).mount();
+
+    const container = splides[i].parentElement;
+
+    container.addEventListener("mouseenter", handleMouseEnter(container, i));
     splides[i].addEventListener("mousemove", handleMousemove(splides[i], i));
     splides[i].addEventListener("mouseleave", handleMouseleave(splides[i], i));
+  }
+
+  function handleMouseEnter(element, index) {
+    return function (event) {
+      rects[index] = element.getBoundingClientRect();
+    };
   }
 
   function handleMousemove(element, index) {
     return function (event) {
       const constrainY = 0.05;
-      const constrainX = 0.005;
+      const constrainX = 0.05;
 
-      const rect = rects[index];
+      let rect = rects[index];
+
+      if (rect.height === 0) {
+        rect = element.parentElement.getBoundingClientRect();
+        rects[index] = rect;
+      }
 
       const rotateY =
         (event.clientX - rect.x - rect.width * 0.5) * -1 * constrainY;
@@ -38,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const transformation = `perspective(${perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
+      element.style.removeProperty("transition");
       element.style.transform = transformation;
     };
   }
