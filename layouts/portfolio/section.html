@@ -1,6 +1,6 @@
 {{ define "main" }}
   <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-    Portfolio
+    {{ .Title }}
   </h1>
   <div class="flex flex-col gap-8">
     {{ range .RegularPages }}
@@ -39,7 +39,7 @@
                     {{ partial "icon.html" "gitlab" }}
                   {{ end }}
 
-                  repo
+                  {{ i18n "portfolio.repo" }}
                 </a>
               {{ end }}
 
@@ -61,7 +61,8 @@
                   class="flex flex-row font-semibold block text-base/8 items-center gap-1"
                 >
                   {{ partial "icon.html" "globe" }}
-                  deploy
+
+                  {{ i18n "portfolio.deploy" }}
                 </a>
               {{ end }}
 

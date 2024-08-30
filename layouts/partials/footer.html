@@ -54,7 +54,7 @@
         {{ i18n "footer.powered_by" (dict "Hugo" $hugo "Theme" $blowfish) | safeHTML }}
         <a
           class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
-          href="/attributions"
+          href="{{ .Ref (dict "path" "/attributions") }}"
           target="_self"
           rel="noopener noreferrer"
           >{{ i18n "footer.andOthers" }}</a

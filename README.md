@@ -1,7 +1,8 @@
-# to add post
+# to add a post
 
 ```sh
-hugo new posts/<post-title>.md
+hugo new posts/en/<post-title>.md
+hugo new posts/ru/<post-title>.md
 ```
 
 # to update hugo modules

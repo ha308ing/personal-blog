@@ -8,36 +8,38 @@ showTableOfContents = true
 
 ## Get gpg Program on Windows
 
-- using *scoop*: `scoop intsall gpg`
+- using _scoop_: `scoop intsall gpg`
 - also comes with `git-bash`: `/bin/gpg`
 
-To change pin entry dialog language set user environment variable *LANG* to *en*:
+To change pin entry dialog language set user environment variable _LANG_ to _en_:
+
 - <kbd>Win</kbd>+<kbd>R</kbd>, `rundll32.exe sysdm.cpl,EditEnvironmentVariables`
-- *Control Panel* / *User Accounts* / *Change my environment variables*
+- _Control Panel_ / _User Accounts_ / _Change my environment variables_
 
 ## Generate GPG Key
 
 1. Run command:
-    - `gpg --full-generate-key`
+   - `gpg --full-generate-key`
 2. Enter key options
 3. Enter signer info:
-    - *name*
-    - *email* (GitHub verified, or GitHub no-reply)
-    - *comment*
+   - _name_
+   - _email_ (GitHub verified, or GitHub no-reply)
+   - _comment_
 4. Get key id (**used to configure git**):
-    - `gpg --list-secret-keys --keyid-format long`
-    - find a section of the key by name, email
-    - on the top row: `sec ed25519/<key id> <date>`
+   - `gpg --list-secret-keys --keyid-format long`
+   - find a section of the key by name, email
+   - on the top row: `sec ed25519/<key id> <date>`
 5. Generate public key (**used on GitHub**):
-    - `gpg --armor --export <key id>`
+   - `gpg --armor --export <key id>`
 
-**NOTE**: to make keys to work on linux add `export GPG_TTY=$(tty)` to *.bashrc* or *.profile*
+**NOTE**: to make keys to work on linux add `export GPG_TTY=$(tty)` to _.bashrc_ or _.profile_
 
 ## Configure git
 
-Now configure *git* with info about:
+Now configure _git_ with info about:
+
 - who signs (GitHub email)
-- with what key (*key id*)
+- with what key (_key id_)
 - with what program (optional if default program is not the same that generated key)
 
 Something like this:
@@ -51,23 +53,25 @@ git config --global gpg.program <path to gpg executable>
 or use [conditional git config]({{<ref "/posts/conditional-git-config" >}} "conditional config")
 
 To verify git config:
+
 - `git config -l --local`
 - `git config -l --scow-scope --show-origin`
 
 **NOTE**:
-1) it's written to add `commit.sign` and `tag.sign`, but without them commits also are signed (I guess it's for more control to what sign and what not)
-2) to explicitly sign commit pass: `git commit -Sm "..."`
-3) to debug commit signing: `GIT_TRACE=1 git commit ...`
+
+1. it's written to add `commit.sign` and `tag.sign`, but without them commits also are signed (I guess it's for more control to what sign and what not)
+2. to explicitly sign commit pass: `git commit -Sm "..."`
+3. to debug commit signing: `GIT_TRACE=1 git commit ...`
 
 ## Add GPG Key to GitHub
 
 1. Go to [GitHub new GPG key settings page](https://github.com/settings/gpg/new)
 2. Paste complete public like:
-    ```
-    -----BEGIN PGP PUBLIC KEY BLOCK-----
-    ...
-    -----END PGP PUBLIC KEY BLOCK-----
-    ```
+   ```
+   -----BEGIN PGP PUBLIC KEY BLOCK-----
+   ...
+   -----END PGP PUBLIC KEY BLOCK-----
+   ```
 
 ## Sources
 

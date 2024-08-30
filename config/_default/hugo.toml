@@ -65,3 +65,26 @@ enableEmoji = true
       name = 'fragmentrefs'
       type = 'fragments'
       weight = 10
+
+[languages.en]
+  contentDir = "content/en"
+  weight = 10
+
+[languages.ru]
+  contentDir = "content/ru"
+  weight = 20
+
+[[module.mounts]]
+  source = "content/en"
+  target = "content"
+  lang = "en"
+
+[[module.mounts]]
+  source = "content/ru"
+  target = "content"
+  lang = "ru"
+
+[[module.mounts]]
+  source = "content/en"
+  target = "content"
+  lang = "ru"
