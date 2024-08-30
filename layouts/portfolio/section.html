@@ -111,7 +111,6 @@
         <script src="{{ .RelPermalink }}"></script>
       {{ end }}
     {{ else }}
-      {{ $js := resources.Get "js/main.js" | js.Build }}
       {{ $optsProd := dict "minify" true }}
       {{ with . | js.Build $optsProd | fingerprint }}
         <script
