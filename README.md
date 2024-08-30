@@ -1,15 +1,19 @@
-# to add a post
+# To add a post
 
 ```sh
-hugo new posts/en/<post-title>.md
-hugo new posts/ru/<post-title>.md
+hugo new content content/en/posts/<post-title>.md
+hugo new content content/ru/posts/<post-title>.md
 ```
 
-# to update hugo modules
+# To update hugo modules
 
 ```sh
 hugo mod get
 ```
+
+# To clone the repo
+
+use `--recurse` flag to clone submodules
 
 # To use tailwind classes
 
