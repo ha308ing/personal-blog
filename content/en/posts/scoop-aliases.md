@@ -17,11 +17,11 @@ Scoop has great documentation and cli help.
 
 `scoop alias list` to view configures aliases
 
-`scoop alias add <alias> <command> <?description>` to add alias
+`scoop alias add <alias> '<command>' "<?description>"` to add an alias
 
 For example I added next aliases:
 
-- `scoop alias add add 'scoop install $args; "Scoop install packages"`
+- `scoop alias add add 'scoop install $args' "Scoop install packages"`
 - `scoop alias add clean 'scoop cache rm * | scoop cleanup -a -k'`
 - `scoop alias add rm 'scoop unintall $args' "Scoop uninstall packages"`
 - `scoop alias add up 'scoop update | scoop status' "Update scoop and show status"`
