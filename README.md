@@ -11,6 +11,10 @@ hugo new content content/ru/posts/<post-title>.md
 hugo mod get
 ```
 
+# To update theme installed as git submodule
+
+`git submodule update --remote --merge`
+
 # To clone the repo
 
 use `--recurse` flag to clone submodules
