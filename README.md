@@ -15,6 +15,8 @@ hugo mod get
 
 `git submodule update --remote --merge`
 
+<small>nb: there is no _node_modules_ dir now</small>
+
 # To clone the repo
 
 use `--recurse` flag to clone submodules
@@ -23,7 +25,10 @@ use `--recurse` flag to clone submodules
 
 _assets/css/compiled/main.css_ must be compiled (and the resulted file will be just an asset, no need to update other things), so commands:
 
-- `tailwind-dev` - build and watch
-- `tailwind-build` - just build
+1. `cd ./themes/blowfish`
+2. `npm i`
+3. `cd ../../`
+4. `tailwind-dev` - build and watch
+5. `tailwind-build` - just build
 
 [source](https://blowfish.page/docs/advanced-customisation/#make-a-build-script)
