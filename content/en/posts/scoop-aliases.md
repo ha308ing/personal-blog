@@ -5,7 +5,7 @@ draft = false
 tags = ["windows", "scoop"]
 +++
 
-[Scoop](scoop.sh) is a package manager for Windows that embraces programs portability, but also support non-portable programs.
+[Scoop](https://scoop.sh) is a package manager for Windows that embraces programs portability, but also support non-portable programs.
 The best part of Scoop is that you can configure your personal "bucket" with programs that you need and use auto-update feature.
 With Scoop it is very difficult to leave Windows.
 
