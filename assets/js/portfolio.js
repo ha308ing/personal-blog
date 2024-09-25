@@ -19,6 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const container = splides[i].parentElement;
 
+    const splideSlideCount =
+      container.getElementsByClassName("splide__slide").length;
+    const arrows = container.getElementsByClassName("splide__arrows");
+
+    if (splideSlideCount === 1 && arrows.length > 0) {
+      arrows[0].classList.add("hidden");
+    }
+
     container.addEventListener("mouseenter", handleMouseEnter(container, i));
     splides[i].addEventListener("mousemove", handleMousemove(splides[i], i));
     splides[i].addEventListener("mouseleave", handleMouseleave(splides[i], i));
