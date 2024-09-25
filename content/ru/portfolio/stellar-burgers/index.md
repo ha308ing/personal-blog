@@ -5,7 +5,7 @@ draft = false
 repo = "https://github.com/ha308ing/stellar-burgers"
 figma = "https://www.figma.com/design/zFGN2O5xktHl9VmoOieq5E"
 deploy = "https://stellar-burgers-ha308ing.netlify.app/"
-images = ["https://i.postimg.cc/cLmGLBt4/Animation.gif", "https://i.postimg.cc/C5fqfnCL/2024-06-06-05-01-19.gif"]
+images = ["stellar-burgers-demo-0.webp","stellar-burgers-demo-1.webp"]
 points = [
   "Проект был начат с классовых компонентов на JavaScript c PropTypes, позже мигрировал на функциональные компоненты и TypeScript.",
   "Была использована UI библиотека с базовыми компонентами.",

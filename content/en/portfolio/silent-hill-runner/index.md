@@ -4,7 +4,7 @@ date = 2024-08-29T16:25:42+04:00
 draft = false
 repo = "https://github.com/AngelinaCP/Yandex-Practicum-Team"
 figma = "https://www.figma.com/design/YslHCZrZyWUfS5Rs1VQhlh"
-images = ["https://i.postimg.cc/MGgvXPzY/burgers-feed-demo-ezgif-com-optimize.gif"]
+images = ["silent-hill-runner-demo.webp"]
 points = [
   "a monorepo for frontend and backend parts",
   "frontend: typescript, react, styled-components, redux, rtk query",
