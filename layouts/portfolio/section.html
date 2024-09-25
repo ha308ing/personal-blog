@@ -13,8 +13,21 @@
             <div class="splide" role="group" aria-label="{{ .Title }} splice">
               <div class="splide__track">
                 <ul class="splide__list">
+                  {{ $page := . }}
                   {{ range .Params.images }}
-                    <li class="splide__slide"><img src="{{ . }}" alt="" /></li>
+
+                    {{ $image := "" }}
+                    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+                      {{ $image = resources.GetRemote . }}
+                    {{ else }}
+                      {{ $image = $page.Resources.Get . }}
+                    {{ end }}
+                    {{ if $image }}
+                      <li class="splide__slide flex items-center">
+                        <img src="{{ $image.RelPermalink }}" alt="" />
+                      </li>
+                    {{ end }}
+
                   {{ end }}
                 </ul>
               </div>
